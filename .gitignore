@@ -28,3 +28,6 @@ y
 y.pub
 *.pub
 !*.pub.example
+
+# Deployment triggers
+.deploy-trigger
