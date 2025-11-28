@@ -17,8 +17,8 @@ const IMAGES = {
   BED_LUX: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&h=1200&fit=crop&q=90&auto=format',
   
   // Dining Sets (replaced broken URLs with verified working images)
-  DINING_MARBLE: 'https://images.unsplash.com/photo-1581539250439-c96689bb5168?w=1200&h=1200&fit=crop&q=90&auto=format',
-  DINING_WOOD: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=1200&fit=crop&q=90&auto=format',
+  DINING_MARBLE: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=1200&fit=crop&q=90&auto=format',
+  DINING_WOOD: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e4?w=1200&h=1200&fit=crop&q=90&auto=format',
   
   // Coffee Tables (varied images)
   TABLE_COFFEE: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=1200&h=1200&fit=crop&q=90&auto=format',
@@ -96,7 +96,7 @@ export const MOCK_PRODUCTS: Product[] = [
     longDescription: 'A centerpiece worthy of a Dubai Marina penthouse. Genuine Italian Carrara marble top sits upon a geometric solid oak base. Comes with 6 Oasis White velvet dining chairs.',
     price: 8999,
     category: Category.DINING,
-    images: [IMAGES.DINING_MARBLE, IMAGES.DINING_WOOD],
+    images: [IMAGES.DINING_MARBLE],
     dimensions: '200cm x 100cm x 76cm',
     stock: 3,
     reserved: 0,
