@@ -32,7 +32,7 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#3A2E2A] via-[#5a4a45] to-[#3A2E2A]" />
         {/* Background Image with Zoom - Using img tag for better reliability */}
         <img 
-          src="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?w=2400&h=1600&fit=crop&q=90&auto=format"
+          src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=2400&h=1600&fit=crop&q=90&auto=format"
           alt="Luxury furniture interior"
           className="absolute inset-0 z-0 w-full h-full object-cover"
           style={{
