@@ -4,11 +4,13 @@ export const CURRENCY = 'AED';
 
 // Curated High-Definition Images - Verified Working URLs (All images replaced with reliable Unsplash URLs)
 const IMAGES = {
-  // Sofas - Luxury furniture images
+  // Sofas - Luxury furniture images (varied)
   SOFA_DARK: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=1200&fit=crop&q=90&auto=format',
   SOFA_LIGHT: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&h=1200&fit=crop&q=90&auto=format',
-  SOFA_GREEN: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=1200&fit=crop&q=90&auto=format',
-  SOFA_BEIGE: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&h=1200&fit=crop&q=90&auto=format',
+  SOFA_GREEN: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=1200&fit=crop&q=90&auto=format',
+  SOFA_BEIGE: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e4?w=1200&h=1200&fit=crop&q=90&auto=format',
+  SOFA_MODERN: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=1200&fit=crop&q=90&auto=format',
+  SOFA_LUXURY: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&h=1200&fit=crop&q=90&auto=format',
   
   // Bed Images - Modern bedroom furniture (replaced broken URLs with verified working images)
   BED_MODERN: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=1200&fit=crop&q=90&auto=format',
@@ -18,9 +20,10 @@ const IMAGES = {
   DINING_MARBLE: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e4?w=1200&h=1200&fit=crop&q=90&auto=format',
   DINING_WOOD: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=1200&fit=crop&q=90&auto=format',
   
-  // Coffee Tables (replaced broken URLs with verified working images)
+  // Coffee Tables (varied images)
   TABLE_COFFEE: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=1200&h=1200&fit=crop&q=90&auto=format',
-  TABLE_SIDE: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=1200&h=1200&fit=crop&q=90&auto=format',
+  TABLE_SIDE: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e4?w=1200&h=1200&fit=crop&q=90&auto=format',
+  TABLE_MODERN: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=1200&fit=crop&q=90&auto=format',
   
   // Wardrobe/Storage
   WARDROBE: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&h=1200&fit=crop&q=90&auto=format',
@@ -30,24 +33,26 @@ const IMAGES = {
   OFFICE_DESK: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=1200&fit=crop&q=90&auto=format',
   OFFICE_CHAIR: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=1200&h=1200&fit=crop&q=90&auto=format',
   
-  // Decor Items (replaced broken URLs with verified working images)
+  // Decor Items (varied images)
   VASE: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&h=1200&fit=crop&q=90&auto=format',
   LAMP: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=1200&h=1200&fit=crop&q=90&auto=format',
   ART: 'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=1200&h=1200&fit=crop&q=90&auto=format',
+  DECOR_MODERN: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&h=1200&fit=crop&q=90&auto=format',
+  DECOR_LUXURY: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=1200&h=1200&fit=crop&q=90&auto=format',
 
   // Chairs
   CHAIR_ACCENT: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=1200&fit=crop&q=90&auto=format',
   CHAIR_MODERN: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1200&h=1200&fit=crop&q=90&auto=format',
 };
 
-// Map Categories to specific Image Sets for better mock generation
+// Map Categories to specific Image Sets for better mock generation (with more variety)
 const CATEGORY_IMAGE_MAP: Record<Category, string[]> = {
-  [Category.SOFAS]: [IMAGES.SOFA_DARK, IMAGES.SOFA_LIGHT, IMAGES.SOFA_GREEN, IMAGES.SOFA_BEIGE, IMAGES.CHAIR_ACCENT, IMAGES.CHAIR_MODERN],
+  [Category.SOFAS]: [IMAGES.SOFA_DARK, IMAGES.SOFA_LIGHT, IMAGES.SOFA_GREEN, IMAGES.SOFA_BEIGE, IMAGES.SOFA_MODERN, IMAGES.SOFA_LUXURY, IMAGES.CHAIR_ACCENT, IMAGES.CHAIR_MODERN],
   [Category.BEDS]: [IMAGES.BED_MODERN, IMAGES.BED_LUX],
   [Category.DINING]: [IMAGES.DINING_MARBLE, IMAGES.DINING_WOOD],
   [Category.WARDROBES]: [IMAGES.WARDROBE, IMAGES.CABINET],
-  [Category.TABLES]: [IMAGES.TABLE_COFFEE, IMAGES.TABLE_SIDE],
-  [Category.DECOR]: [IMAGES.VASE, IMAGES.LAMP, IMAGES.ART],
+  [Category.TABLES]: [IMAGES.TABLE_COFFEE, IMAGES.TABLE_SIDE, IMAGES.TABLE_MODERN],
+  [Category.DECOR]: [IMAGES.VASE, IMAGES.LAMP, IMAGES.ART, IMAGES.DECOR_MODERN, IMAGES.DECOR_LUXURY],
   [Category.OFFICE]: [IMAGES.OFFICE_DESK, IMAGES.OFFICE_CHAIR],
 };
 
@@ -197,7 +202,7 @@ export const MOCK_PRODUCTS: Product[] = [
     longDescription: 'Bright and airy, perfect for sun-drenched Dubai villas. Stain-resistant performance fabric.',
     price: 6800,
     category: Category.SOFAS,
-    images: [IMAGES.SOFA_GREEN],
+    images: [IMAGES.SOFA_LUXURY, IMAGES.SOFA_MODERN],
     dimensions: '300cm x 200cm',
     stock: 4,
     reserved: 0,

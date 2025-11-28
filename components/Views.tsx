@@ -221,11 +221,65 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
           className="container mx-auto px-6 lg:px-8 max-w-7xl overflow-x-auto pb-8 hide-scrollbar scroll-smooth"
         >
            <div className="flex gap-8 w-max">
-             {products.filter((p: Product) => p.isBestSeller || p.price > 4000).slice(0, 6).map((product: Product) => (
-               <div key={product.id} className="w-[320px] flex-shrink-0">
-                 <ProductCard product={product} onViewProduct={onViewProduct} />
-               </div>
-             ))}
+             {(() => {
+               // Get diverse products from different categories for variety
+               const bestSellers = products.filter((p: Product) => p.isBestSeller);
+               const highValue = products.filter((p: Product) => p.price > 4000 && !p.isBestSeller);
+               const newArrivals = products.filter((p: Product) => p.isNew && !p.isBestSeller);
+               const diverse = products.filter((p: Product) => 
+                 !p.isBestSeller && p.price <= 4000 && !p.isNew
+               );
+               
+               // Combine and get unique products from different categories
+               const categoryMap = new Map();
+               const selectedProducts: Product[] = [];
+               
+               // Add best sellers first
+               bestSellers.forEach(p => {
+                 if (!categoryMap.has(p.category) && selectedProducts.length < 6) {
+                   categoryMap.set(p.category, true);
+                   selectedProducts.push(p);
+                 }
+               });
+               
+               // Add high value items
+               highValue.forEach(p => {
+                 if (!categoryMap.has(p.category) && selectedProducts.length < 6) {
+                   categoryMap.set(p.category, true);
+                   selectedProducts.push(p);
+                 }
+               });
+               
+               // Add new arrivals
+               newArrivals.forEach(p => {
+                 if (!categoryMap.has(p.category) && selectedProducts.length < 6) {
+                   categoryMap.set(p.category, true);
+                   selectedProducts.push(p);
+                 }
+               });
+               
+               // Fill remaining slots with diverse products
+               diverse.forEach(p => {
+                 if (!categoryMap.has(p.category) && selectedProducts.length < 6) {
+                   categoryMap.set(p.category, true);
+                   selectedProducts.push(p);
+                 }
+               });
+               
+               // If still not enough, add any remaining products
+               const allProducts = [...bestSellers, ...highValue, ...newArrivals, ...diverse];
+               allProducts.forEach(p => {
+                 if (selectedProducts.length < 6 && !selectedProducts.find(sp => sp.id === p.id)) {
+                   selectedProducts.push(p);
+                 }
+               });
+               
+               return selectedProducts.slice(0, 6).map((product: Product) => (
+                 <div key={product.id} className="w-[320px] flex-shrink-0">
+                   <ProductCard product={product} onViewProduct={onViewProduct} />
+                 </div>
+               ));
+             })()}
            </div>
         </div>
       </section>
