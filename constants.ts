@@ -17,7 +17,7 @@ const IMAGES = {
   BED_LUX: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&h=1200&fit=crop&q=90&auto=format',
   
   // Dining Sets (replaced broken URLs with verified working images)
-  DINING_MARBLE: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e4?w=1200&h=1200&fit=crop&q=90&auto=format',
+  DINING_MARBLE: 'https://images.unsplash.com/photo-1581539250439-c96689bb5168?w=1200&h=1200&fit=crop&q=90&auto=format',
   DINING_WOOD: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=1200&fit=crop&q=90&auto=format',
   
   // Coffee Tables (varied images)
