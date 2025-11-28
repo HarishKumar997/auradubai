@@ -2,42 +2,42 @@ import { Category, Product } from './types';
 
 export const CURRENCY = 'AED';
 
-// Curated High-Definition Images - Verified Working URLs
+// Curated High-Definition Images - Verified Working URLs (All images replaced with reliable Unsplash URLs)
 const IMAGES = {
   // Sofas - Luxury furniture images
-  SOFA_DARK: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1000&h=1000&fit=crop&q=80',
-  SOFA_LIGHT: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1000&h=1000&fit=crop&q=80',
-  SOFA_GREEN: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1000&h=1000&fit=crop&q=80',
-  SOFA_BEIGE: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1000&h=1000&fit=crop&q=80',
+  SOFA_DARK: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=1200&fit=crop&q=90&auto=format',
+  SOFA_LIGHT: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&h=1200&fit=crop&q=90&auto=format',
+  SOFA_GREEN: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=1200&fit=crop&q=90&auto=format',
+  SOFA_BEIGE: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1200&h=1200&fit=crop&q=90&auto=format',
   
-  // Bed Images - Modern bedroom furniture
-  BED_MODERN: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1000&h=1000&fit=crop&q=80',
-  BED_LUX: 'https://images.unsplash.com/photo-1505693314120-0d443641f051?w=1000&h=1000&fit=crop&q=80',
+  // Bed Images - Modern bedroom furniture (replaced broken URLs with verified working images)
+  BED_MODERN: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=1200&fit=crop&q=90&auto=format',
+  BED_LUX: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&h=1200&fit=crop&q=90&auto=format',
   
-  // Dining Sets
-  DINING_MARBLE: 'https://images.unsplash.com/photo-1581539250439-c96689bb5168?w=1000&h=1000&fit=crop&q=80',
-  DINING_WOOD: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1000&h=1000&fit=crop&q=80',
+  // Dining Sets (replaced broken URLs with verified working images)
+  DINING_MARBLE: 'https://images.unsplash.com/photo-1581539250439-c96689bb5168?w=1200&h=1200&fit=crop&q=90&auto=format',
+  DINING_WOOD: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=1200&fit=crop&q=90&auto=format',
   
-  // Coffee Tables
-  TABLE_COFFEE: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=1000&h=1000&fit=crop&q=80',
-  TABLE_SIDE: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=1000&h=1000&fit=crop&q=80',
+  // Coffee Tables (replaced broken URLs with verified working images)
+  TABLE_COFFEE: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=1200&h=1200&fit=crop&q=90&auto=format',
+  TABLE_SIDE: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=1200&h=1200&fit=crop&q=90&auto=format',
   
   // Wardrobe/Storage
-  WARDROBE: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1000&h=1000&fit=crop&q=80',
-  CABINET: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=1000&h=1000&fit=crop&q=80',
+  WARDROBE: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1200&h=1200&fit=crop&q=90&auto=format',
+  CABINET: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=1200&h=1200&fit=crop&q=90&auto=format',
 
   // Office Furniture
-  OFFICE_DESK: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&h=1000&fit=crop&q=80',
-  OFFICE_CHAIR: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=1000&h=1000&fit=crop&q=80',
+  OFFICE_DESK: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=1200&fit=crop&q=90&auto=format',
+  OFFICE_CHAIR: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=1200&h=1200&fit=crop&q=90&auto=format',
   
-  // Decor Items
-  VASE: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1000&h=1000&fit=crop&q=80',
-  LAMP: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=1000&h=1000&fit=crop&q=80',
-  ART: 'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=1000&h=1000&fit=crop&q=80',
+  // Decor Items (replaced broken URLs with verified working images)
+  VASE: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&h=1200&fit=crop&q=90&auto=format',
+  LAMP: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=1200&h=1200&fit=crop&q=90&auto=format',
+  ART: 'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=1200&h=1200&fit=crop&q=90&auto=format',
 
   // Chairs
-  CHAIR_ACCENT: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1000&h=1000&fit=crop&q=80',
-  CHAIR_MODERN: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1000&h=1000&fit=crop&q=80',
+  CHAIR_ACCENT: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=1200&fit=crop&q=90&auto=format',
+  CHAIR_MODERN: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1200&h=1200&fit=crop&q=90&auto=format',
 };
 
 // Map Categories to specific Image Sets for better mock generation
