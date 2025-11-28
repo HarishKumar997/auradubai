@@ -317,7 +317,15 @@ export const ProductDetail = ({ product, onAddToCart, onNavigate, onViewProduct 
         {/* Images */}
         <div className="space-y-4">
           <div className={`aspect-square bg-gray-50 overflow-hidden relative group ${isOutOfStock ? 'opacity-75' : ''}`}>
-            <img src={product.images[activeImg]} alt={product.name} className={`w-full h-full object-cover ${isOutOfStock ? 'grayscale' : ''}`} />
+            <img 
+              src={product.images[activeImg] || product.images[0] || 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=1200&fit=crop&q=90&auto=format'} 
+              alt={product.name} 
+              className={`w-full h-full object-cover ${isOutOfStock ? 'grayscale' : ''}`}
+              loading="eager"
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=1200&fit=crop&q=90&auto=format';
+              }}
+            />
              {isOutOfStock && (
                 <div className="absolute inset-0 flex items-center justify-center bg-white/50">
                    <div className="bg-[#3A2E2A] text-white px-6 py-2 uppercase tracking-widest font-bold">Sold Out</div>
@@ -331,10 +339,19 @@ export const ProductDetail = ({ product, onAddToCart, onNavigate, onViewProduct 
              {product.images.concat(product.images).slice(0, 4).map((img: string, idx: number) => (
                <div 
                 key={idx} 
-                className={`aspect-square cursor-pointer border-2 transition-colors ${idx === activeImg ? 'border-[#C6A162]' : 'border-transparent hover:border-gray-200'}`}
+                className={`aspect-square cursor-pointer border-2 transition-colors bg-gray-100 overflow-hidden ${idx === activeImg ? 'border-[#C6A162]' : 'border-transparent hover:border-gray-200'}`}
                 onClick={() => setActiveImg(idx)}
                >
-                 <img src={img} className={`w-full h-full object-cover ${isOutOfStock ? 'grayscale' : ''}`} alt="thumbnail" />
+                 <img 
+                   src={img || 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=1200&fit=crop&q=90&auto=format'} 
+                   className={`w-full h-full object-cover ${isOutOfStock ? 'grayscale' : ''}`} 
+                   alt={`${product.name} thumbnail ${idx + 1}`}
+                   loading="lazy"
+                   style={{ minHeight: '100%', minWidth: '100%' }}
+                   onError={(e) => {
+                     e.currentTarget.src = 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=1200&fit=crop&q=90&auto=format';
+                   }}
+                 />
                </div>
              ))}
           </div>

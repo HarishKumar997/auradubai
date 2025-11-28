@@ -178,11 +178,22 @@ export const ProductCard = ({ product, onViewProduct }: { product: Product, onVi
   return (
     <div className={`group relative bg-white cursor-pointer ${isOutOfStock ? 'opacity-75' : ''}`} onClick={() => onViewProduct(product)}>
       <div className="relative overflow-hidden bg-gray-100 aspect-[4/5] mb-4">
-        <img 
-          src={product.images[0]} 
-          alt={product.name} 
-          className={`w-full h-full object-cover transition-transform duration-700 ${isOutOfStock ? 'grayscale' : 'group-hover:scale-105'}`}
-        />
+        {product.images && product.images.length > 0 ? (
+          <img 
+            src={product.images[0]} 
+            alt={product.name} 
+            className={`w-full h-full object-cover transition-transform duration-700 ${isOutOfStock ? 'grayscale' : 'group-hover:scale-105'}`}
+            loading="lazy"
+            style={{ minHeight: '100%', minWidth: '100%' }}
+            onError={(e) => {
+              e.currentTarget.src = 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=1200&fit=crop&q=90&auto=format';
+            }}
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+            <span className="text-gray-400 text-sm">No Image</span>
+          </div>
+        )}
         
         {/* Status Badges */}
         <div className="absolute top-4 left-4 flex flex-col gap-2">
