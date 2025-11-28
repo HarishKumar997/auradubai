@@ -109,7 +109,7 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 h-auto md:h-[600px]">
             {/* Item 1 - Large Left */}
             <div className="lg:col-span-6 relative group overflow-hidden cursor-pointer h-[400px] md:h-full" onClick={() => onNavigate('CATALOG')}>
-              <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?w=1200&h=800&fit=crop&q=90&auto=format" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Living" />
+              <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=800&fit=crop&q=90&auto=format" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Living Room Furniture" />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
               <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
                 <span className="text-white/80 text-sm uppercase tracking-widest mb-2 block">01</span>
@@ -121,7 +121,7 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
             <div className="lg:col-span-6 flex flex-col gap-6 h-full">
               {/* Item 2 - Top Right */}
               <div className="flex-1 relative group overflow-hidden cursor-pointer min-h-[250px]" onClick={() => onNavigate('CATALOG')}>
-                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&h=800&fit=crop&q=90&auto=format" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Bedroom" />
+                <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&h=800&fit=crop&q=90&auto=format" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Bedroom Furniture" />
                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
                  <div className="absolute bottom-0 left-0 p-8 w-full">
                    <span className="text-white/80 text-sm uppercase tracking-widest mb-2 block">02</span>
@@ -132,7 +132,7 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
               <div className="flex-1 grid grid-cols-2 gap-6 min-h-[250px]">
                  {/* Item 3 */}
                  <div className="relative group overflow-hidden cursor-pointer" onClick={() => onNavigate('CATALOG')}>
-                    <img src="https://images.unsplash.com/photo-1581539250439-c96689bb5168?w=800&h=800&fit=crop&q=90&auto=format" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Dining" />
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=800&fit=crop&q=90&auto=format" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Dining Room Furniture" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
                     <div className="absolute bottom-0 left-0 p-6">
                       <h3 className="text-white font-serif text-xl">Dining</h3>
@@ -140,7 +140,7 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
                  </div>
                  {/* Item 4 */}
                  <div className="relative group overflow-hidden cursor-pointer" onClick={() => onNavigate('CATALOG')}>
-                    <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=800&h=800&fit=crop&q=90&auto=format" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Decor" />
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=800&fit=crop&q=90&auto=format" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Home Decor Furniture" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
                     <div className="absolute bottom-0 left-0 p-6">
                       <h3 className="text-white font-serif text-xl">Decor</h3>
@@ -185,11 +185,11 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
              <div className="relative">
                <div className="relative z-10">
-                  <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?w=1200&h=800&fit=crop&q=90&auto=format" alt="Interior" className="w-full shadow-2xl rounded-sm" />
+                  <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=800&fit=crop&q=90&auto=format" alt="Luxury Furniture Interior" className="w-full shadow-2xl rounded-sm" />
                </div>
                {/* Floating overlap image */}
                <div className="absolute -bottom-16 -left-16 w-2/3 hidden md:block z-20 shadow-2xl border-8 border-white">
-                  <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=800&fit=crop&q=90&auto=format" alt="Detail" className="w-full rounded-sm" />
+                  <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&h=800&fit=crop&q=90&auto=format" alt="Furniture Detail" className="w-full rounded-sm" />
                </div>
              </div>
              <div className="md:pl-10">
