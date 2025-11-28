@@ -7,6 +7,23 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, L
 
 // --- HOME PAGE ---
 export const Home = ({ onNavigate, onViewProduct, products }: any) => {
+  const trendingProductsRef = React.useRef<HTMLDivElement>(null);
+
+  const scrollTrending = (direction: 'left' | 'right') => {
+    if (trendingProductsRef.current) {
+      const scrollAmount = 340; // 320px card width + 20px gap
+      const currentScroll = trendingProductsRef.current.scrollLeft;
+      const newScroll = direction === 'left' 
+        ? currentScroll - scrollAmount 
+        : currentScroll + scrollAmount;
+      
+      trendingProductsRef.current.scrollTo({
+        left: newScroll,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="animate-fadeIn w-full overflow-hidden">
       {/* Hero */}
@@ -182,15 +199,30 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
              <h2 className="font-serif text-5xl md:text-6xl text-[#3A2E2A] leading-tight">Trending Now</h2>
           </div>
           <div className="flex gap-3">
-            <button className="w-12 h-12 border-2 border-[#3A2E2A] rounded-full flex items-center justify-center hover:bg-[#3A2E2A] hover:text-white transition-all duration-300 hover:scale-110" aria-label="Previous"><ChevronRight className="rotate-180" size={20}/></button>
-             <button className="w-12 h-12 border-2 border-[#3A2E2A] rounded-full flex items-center justify-center hover:bg-[#3A2E2A] hover:text-white transition-all duration-300 hover:scale-110" aria-label="Next"><ChevronRight size={20}/></button>
+            <button 
+              onClick={() => scrollTrending('left')}
+              className="w-12 h-12 border-2 border-[#3A2E2A] rounded-full flex items-center justify-center hover:bg-[#3A2E2A] hover:text-white transition-all duration-300 hover:scale-110 active:scale-95" 
+              aria-label="Previous"
+            >
+              <ChevronRight className="rotate-180" size={20}/>
+            </button>
+            <button 
+              onClick={() => scrollTrending('right')}
+              className="w-12 h-12 border-2 border-[#3A2E2A] rounded-full flex items-center justify-center hover:bg-[#3A2E2A] hover:text-white transition-all duration-300 hover:scale-110 active:scale-95" 
+              aria-label="Next"
+            >
+              <ChevronRight size={20}/>
+            </button>
           </div>
         </div>
         
-        <div className="container mx-auto px-6 overflow-x-auto pb-8 hide-scrollbar">
-           <div className="flex space-x-8 w-max">
+        <div 
+          ref={trendingProductsRef}
+          className="container mx-auto px-6 lg:px-8 max-w-7xl overflow-x-auto pb-8 hide-scrollbar scroll-smooth"
+        >
+           <div className="flex gap-8 w-max">
              {products.filter((p: Product) => p.isBestSeller || p.price > 4000).slice(0, 6).map((product: Product) => (
-               <div key={product.id} className="w-[320px]">
+               <div key={product.id} className="w-[320px] flex-shrink-0">
                  <ProductCard product={product} onViewProduct={onViewProduct} />
                </div>
              ))}
