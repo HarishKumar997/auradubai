@@ -69,24 +69,42 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
       </section>
 
       {/* Intro / Philosophy Section */}
-      <section className="py-24 bg-[#FAF8F4]">
-        <div className="container mx-auto px-6 text-center max-w-4xl">
-           <h2 className="font-serif text-3xl md:text-5xl text-[#3A2E2A] mb-8">Refined Living for the Modern Nomad</h2>
-           <p className="text-gray-600 leading-loose text-lg mb-12">
+      <section className="py-32 bg-gradient-to-b from-[#FAF8F4] to-white">
+        <div className="container mx-auto px-6 lg:px-8 text-center max-w-5xl">
+           <div className="mb-6">
+             <span className="text-[#C6A162] uppercase tracking-[0.3em] text-sm font-semibold">Our Philosophy</span>
+           </div>
+           <h2 className="font-serif text-4xl md:text-6xl text-[#3A2E2A] mb-8 leading-tight">Refined Living for the Modern Nomad</h2>
+           <p className="text-gray-600 leading-relaxed text-lg md:text-xl mb-16 max-w-3xl mx-auto">
              We blend the minimalist serenity of Scandinavian design with the warmth and grandeur of Arabian aesthetics. 
              Every piece tells a story of craftsmanship, luxury, and comfort.
            </p>
-           <div className="grid grid-cols-3 gap-8 border-t border-gray-200 pt-12">
-              <div>
-                <h4 className="font-serif text-2xl text-[#C6A162] mb-2">Artisan</h4>
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-gray-200 pt-16">
+              <div className="group">
+                <div className="mb-4">
+                  <div className="w-16 h-16 mx-auto bg-[#C6A162]/10 rounded-full flex items-center justify-center group-hover:bg-[#C6A162] transition-all duration-300">
+                    <span className="text-3xl">🎨</span>
+                  </div>
+                </div>
+                <h4 className="font-serif text-2xl text-[#3A2E2A] mb-2 group-hover:text-[#C6A162] transition-colors">Artisan</h4>
                 <p className="text-sm text-gray-500 uppercase tracking-widest">Craftsmanship</p>
               </div>
-              <div>
-                <h4 className="font-serif text-2xl text-[#C6A162] mb-2">Organic</h4>
+              <div className="group">
+                <div className="mb-4">
+                  <div className="w-16 h-16 mx-auto bg-[#C6A162]/10 rounded-full flex items-center justify-center group-hover:bg-[#C6A162] transition-all duration-300">
+                    <span className="text-3xl">🌿</span>
+                  </div>
+                </div>
+                <h4 className="font-serif text-2xl text-[#3A2E2A] mb-2 group-hover:text-[#C6A162] transition-colors">Organic</h4>
                 <p className="text-sm text-gray-500 uppercase tracking-widest">Materials</p>
               </div>
-              <div>
-                <h4 className="font-serif text-2xl text-[#C6A162] mb-2">Dubai</h4>
+              <div className="group">
+                <div className="mb-4">
+                  <div className="w-16 h-16 mx-auto bg-[#C6A162]/10 rounded-full flex items-center justify-center group-hover:bg-[#C6A162] transition-all duration-300">
+                    <span className="text-3xl">🏛️</span>
+                  </div>
+                </div>
+                <h4 className="font-serif text-2xl text-[#3A2E2A] mb-2 group-hover:text-[#C6A162] transition-colors">Dubai</h4>
                 <p className="text-sm text-gray-500 uppercase tracking-widest">Design</p>
               </div>
            </div>
@@ -94,15 +112,19 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
       </section>
 
       {/* Featured Categories - Masonry Style */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="flex justify-between items-end mb-16">
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
+          <div className="flex justify-between items-end mb-20">
             <div>
-              <span className="text-[#C6A162] uppercase tracking-widest text-sm font-medium">Collections</span>
-              <h2 className="font-serif text-4xl mt-3 text-[#3A2E2A]">Curated Spaces</h2>
+              <span className="text-[#C6A162] uppercase tracking-[0.3em] text-sm font-semibold block mb-3">Collections</span>
+              <h2 className="font-serif text-5xl md:text-6xl text-[#3A2E2A] leading-tight">Curated Spaces</h2>
             </div>
-            <button onClick={() => onNavigate('CATALOG')} className="hidden md:flex items-center text-[#3A2E2A] hover:text-[#C6A162] transition-colors uppercase text-sm tracking-widest font-medium group">
-              View All Categories <ChevronRight size={16} className="ml-2 transition-transform group-hover:translate-x-1"/>
+            <button 
+              onClick={() => onNavigate('CATALOG')} 
+              className="hidden md:flex items-center text-[#3A2E2A] hover:text-[#C6A162] transition-all duration-300 uppercase text-sm tracking-widest font-semibold group px-4 py-2 rounded-lg hover:bg-[#FAF8F4]"
+            >
+              View All Categories 
+              <ChevronRight size={18} className="ml-2 transition-transform group-hover:translate-x-2"/>
             </button>
           </div>
           
@@ -153,15 +175,15 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
       </section>
 
       {/* Best Sellers (State-aware) */}
-      <section className="py-24 bg-[#FAF8F4]">
-        <div className="container mx-auto px-6 mb-12 flex justify-between items-end">
+      <section className="py-32 bg-gradient-to-b from-white to-[#FAF8F4]">
+        <div className="container mx-auto px-6 lg:px-8 max-w-7xl mb-16 flex justify-between items-end">
           <div>
-             <span className="text-[#C6A162] uppercase tracking-widest text-sm font-medium">Favorites</span>
-             <h2 className="font-serif text-4xl text-[#3A2E2A] mt-3">Trending Now</h2>
+             <span className="text-[#C6A162] uppercase tracking-[0.3em] text-sm font-semibold block mb-3">Favorites</span>
+             <h2 className="font-serif text-5xl md:text-6xl text-[#3A2E2A] leading-tight">Trending Now</h2>
           </div>
-          <div className="flex gap-2">
-            <button className="w-10 h-10 border border-[#3A2E2A] flex items-center justify-center hover:bg-[#3A2E2A] hover:text-white transition-colors"><ChevronRight className="rotate-180" size={20}/></button>
-             <button className="w-10 h-10 border border-[#3A2E2A] flex items-center justify-center hover:bg-[#3A2E2A] hover:text-white transition-colors"><ChevronRight size={20}/></button>
+          <div className="flex gap-3">
+            <button className="w-12 h-12 border-2 border-[#3A2E2A] rounded-full flex items-center justify-center hover:bg-[#3A2E2A] hover:text-white transition-all duration-300 hover:scale-110" aria-label="Previous"><ChevronRight className="rotate-180" size={20}/></button>
+             <button className="w-12 h-12 border-2 border-[#3A2E2A] rounded-full flex items-center justify-center hover:bg-[#3A2E2A] hover:text-white transition-all duration-300 hover:scale-110" aria-label="Next"><ChevronRight size={20}/></button>
           </div>
         </div>
         
