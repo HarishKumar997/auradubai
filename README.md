@@ -10,14 +10,56 @@ View your app in AI Studio: https://ai.studio/apps/drive/1AR_bUzFZYJeMvH4ALvRnM1
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+### Quick Start
 
+**Prerequisites:** 
+- Node.js (version 18 or higher) - [Download here](https://nodejs.org/)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+**Steps:**
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   or
+   ```bash
+   npm start
+   ```
+
+3. **Open your browser:**
+   - The app will automatically open at `http://localhost:3000`
+   - If it doesn't open automatically, manually navigate to the URL
+
+### Environment Variables (Optional)
+
+If you need to use the Gemini API key:
+
+1. Create a `.env.local` file in the root directory
+2. Add your API key:
+   ```
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
+**Note:** The application works without this key if you're not using AI features.
+
+### Available Commands
+
+- `npm run dev` or `npm start` - Start development server (http://localhost:3000)
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+
+### Troubleshooting Local Development
+
+- **Port 3000 already in use?** Change the port in `vite.config.ts`
+- **Dependencies not installing?** Try `npm cache clean --force` then `npm install`
+- **Images not loading?** Make sure you have an internet connection (images load from Unsplash CDN)
+
+For detailed local setup instructions, see [LOCAL_SETUP.md](LOCAL_SETUP.md)
 
 ## Deploy to Vercel (Free Account)
 
