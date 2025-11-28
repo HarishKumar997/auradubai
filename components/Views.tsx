@@ -11,16 +11,27 @@ export const Home = ({ onNavigate, onViewProduct, products }: any) => {
     <div className="animate-fadeIn w-full overflow-hidden">
       {/* Hero */}
       <section className="relative h-screen w-full overflow-hidden">
-        {/* Background Image with Zoom */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center animate-slowZoom"
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?w=2400&h=1600&fit=crop&q=90&auto=format")' }} 
+        {/* Fallback background color */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#3A2E2A] via-[#5a4a45] to-[#3A2E2A]" />
+        {/* Background Image with Zoom - Using img tag for better reliability */}
+        <img 
+          src="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?w=2400&h=1600&fit=crop&q=90&auto=format"
+          alt="Luxury furniture interior"
+          className="absolute inset-0 z-0 w-full h-full object-cover"
+          style={{
+            animation: 'slowZoom 20s linear infinite alternate',
+            transform: 'scale(1)'
+          }}
+          onError={(e) => {
+            // Fallback if image fails to load
+            e.currentTarget.style.display = 'none';
+          }}
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/40 via-transparent to-black/70" />
         
         {/* Hero Content */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 text-white pt-20">
+        <div className="relative z-[2] h-full flex flex-col items-center justify-center text-center px-6 text-white pt-20">
           <div className="animate-slideUp" style={{ animationDelay: '0.2s' }}>
             <p className="text-sm md:text-base tracking-[0.4em] uppercase mb-6 text-[#C6A162] font-medium drop-shadow-md">
               Aura Living Dubai
